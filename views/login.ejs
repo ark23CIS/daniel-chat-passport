@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse nav-elements" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active login">
+                            <a href="/users/login" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item active register">
+                            <a href="/users/register" class="nav-link">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body panel panel-primary">
+                <form class="form-container" action="/users/login" method="POST">
+                    <div class = "header" >
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p class="lead mt-4">
+                    No Account? <a href="/users/register">Register</a>
+                </p>
+                <div class="social-buttons">
+                    <!-- <div>
+                        <a href="/auth/facebook">
+                            <button type="button" class="btn btn-block facebook-btn">Login with Facebook</button>
+                        </a>
+                    </div> -->
+                    <div class="github">
+                        <a href="/auth/github">
+                            <button type="button" class="btn btn-dark btn-block">Login with Github</button>
+                        </a>
+                    </div>
+                    <div>
+                        <div class = "vkontakte">
+                            <a href="/auth/vkontakte">
+                                <button type="button" class="btn btn-info btn-block">Login with Vkontakte</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

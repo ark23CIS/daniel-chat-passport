@@ -1,0 +1,19 @@
+{
+    "facebook" : {
+        "clientID": "422835771780213",
+        "clientSecret": "5a5237385fa0bf98c8253cf20ac8ef76",
+        "callbackURL": "/auth/facebook/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    },
+"vkontakte": {
+        "clientID": "7039596",
+        "clientSecret": "37ddd88437ddd88437ddd884e137b6b2e8337dd37ddd8846ac47c54ade8c8bd4754363c",
+        "callbackURL":  "http://localhost:3000/auth/vkontakte/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    },
+"github": {
+    "cliendID": "3c7266f775289d52def4",
+    "callbackURL":  "http://localhost:3000/auth/github/callback",
+    "cliendSecret": "a050c34a813ea39ea973ca911af0696416e5940b"
+    }
+}
