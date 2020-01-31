@@ -17,7 +17,6 @@ router.get('/chat', ensureAuthenticated, (req, res) =>
 );
 
 
-
 router.get('/auth/vkontakte', passport.authenticate('vkontakte', {
     scope: ['profile']
 }));

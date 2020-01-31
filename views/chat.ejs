@@ -33,13 +33,13 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <h3>Messages</h3>
+                <h3 id="user_name"><%= user.name%></h3>
                 <div id="all_mess"></div>
             </div>
         </div>
         <div class="col-6 message-form">
             <form id="messForm">
-                <label for="message">Message</label>
+                <label for="message">Messages</label>
                 <textarea name="message" id="message" class="form-control" placeholder="Input a message"></textarea>
                 <br>
                 <input type="submit" value="Send" class="btn btn-danger">
@@ -78,7 +78,7 @@
         $(function() {
             var socket = io.connect();
             var $form = $("#messForm");
-            var $name = $("#confucii");
+            var $name = $("#user_name");
             var $textarea = $("#message");
             var $all_messages = $("#all_mess");
 
@@ -86,14 +86,14 @@
                 event.preventDefault();
                 socket.emit('send mess', {
                     mess: $textarea.val(),
-                    name: $name.val(),
+                    name: $name.text(),
                     className: alertClass
                 });
                 $textarea.val('');
             });
             socket.on('add mess', function(data) {
                 if (data.mess !== null && data.mess.length !== 0) {
-                    $all_messages.append("<div class='alert alert-" + data.className + "'><b><%= user.name%></b>: " + data.mess + "</div>");
+                    $all_messages.append("<div class='alert alert-" + data.className + "'><b>" + data.name + "</b>: " + data.mess + "</div>");
                 } else {
                     alert("Input a message before trying send it!");
                 }

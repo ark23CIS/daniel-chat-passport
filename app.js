@@ -57,11 +57,11 @@ app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 connections = [];
 io.sockets.on('connection', function(socket) {
-    console.log("Успешное соединение");
+    console.log("Succesfull connection");
     connections.push(socket);
     socket.on('disconnect', function(data) {
         connections.splice(connections.indexOf(socket), 1);
-        console.log("Отключились");
+        console.log("disconnected");
     });
     socket.on('send mess', function(data) {
         io.sockets.emit('add mess', { mess: data.mess, name: data.name, className: data.className });
